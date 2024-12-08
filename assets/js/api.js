@@ -1,39 +1,44 @@
-// Melakukan fetch data dari API
-fetch('https://pos.warungkebunqu.com/api/products')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return response.json();  // Mengubah response menjadi JSON
-    })
-    .then(data => {
-        // Menampilkan data di HTML
-        const productsContainer = document.getElementById('products');
-        
-        // Cek apakah data mengandung array produk
+fetch("https://pos.warungkebunqu.com/api/products")
+    .then((response) => response.json())
+    .then((data) => {
+        const productsContainer = document.getElementById("product-list");
+
         if (Array.isArray(data.data)) {
-            data.data.forEach(product => {
-                const productElement = document.createElement('div');
-                productElement.classList.add('product');
-                
-                // Menambahkan informasi produk ke dalam elemen HTML
+            data.data.forEach((product) => {
+                const productElement = document.createElement("div");
+                productElement.classList.add(
+                    "bg-white",
+                    "shadow-md",
+                    "rounded-lg",
+                    "overflow-hidden",
+                    "hover:shadow-lg",
+                    "transition"
+                );
+
                 productElement.innerHTML = `
-                    <img src="https://pos.warungkebunqu.com/storage/produk/${product.image}" alt="${product.name}">
-                    <h2>${product.name}</h2>
-                    <p class="price">Harga: Rp ${product.price.toLocaleString()}</p>
-                    <div class="description">${product.description}</div>
-                    <p><strong>Kategori:</strong> ${product.category.name}</p>
-                    <p><strong>Stok:</strong> ${product.stock}</p>
+                    <img src="https://pos.warungkebunqu.com/storage/produk/${
+                      product.image
+                    }" 
+                        alt="${product.name}" 
+                         class="w-full h-40 object-cover">
+                    <div class="p-4">
+                        <h5 class="text-lg font-semibold text-gray-800 truncate">${
+                          product.name
+                        }</h5>
+                        <p class="text-gray-600">Harga: Rp ${product.price.toLocaleString()}</p>
+                        <p class="text-sm text-gray-500"><strong>Kategori:</strong> ${
+                          product.category.name
+                        }</p>
+                    </div>
                 `;
-                
-                // Menambahkan elemen produk ke dalam container
+
                 productsContainer.appendChild(productElement);
             });
         } else {
-            console.error('Data produk tidak ditemukan atau format tidak sesuai');
+            productsContainer.innerHTML =
+                '<p class="text-center text-red-500">Data produk tidak ditemukan.</p>';
         }
     })
-    .catch(error => {
-        // Menangani error
-        console.error('There was a problem with the fetch operation:', error);
+    .catch((error) => {
+        console.error("Error:", error);
     });
