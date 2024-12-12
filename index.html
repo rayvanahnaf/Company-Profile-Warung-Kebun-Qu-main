@@ -195,8 +195,51 @@
     <!-- feature section //end -->
 
     <!-- gallery section -->
-    <h1>Daftar Produk</h1>
-  <div id="products"></div>
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold text-center mb-6">Daftar Produk</h1>
+        <div id="products" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Produk akan ditampilkan di sini -->
+        </div>
+    </div>
+
+    <!-- Google Reviews -->
+    <h1>Google Maps Reviews</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Page</th>
+                <th>Name</th>
+                <th>Link</th>
+                <th>Thumbnail</th>
+                <th>Rating</th>
+                <th>Date</th>
+                <th>Snippet</th>
+                <th>Local Guide</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for review in reviews %}
+            <tr>
+                <td>{{ review.page }}</td>
+                <td>{{ review.name }}</td>
+                <td><a href="{{ review.link }}">{{ review.link }}</a></td>
+                <td>
+                    {% if review.thumbnail %}
+                        <img src="{{ review.thumbnail }}" alt="Thumbnail" style="width:50px;">
+                    {% else %}
+                        No Image
+                    {% endif %}
+                </td>
+                <td>{{ review.rating }}</td>
+                <td>{{ review.date }}</td>
+                <td>{{ review.snippet }}</td>
+                <td>{{ 'Yes' if review.local_guide else 'No' }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- End Google Reviews -->
 
     <!-- gallery section //end -->
 
