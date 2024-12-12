@@ -42,6 +42,9 @@
     <meta name="twitter:description" content="Warung Kebunqu menyajikan kuliner khas Indonesia dengan suasana asri di Babakan Madang, Bogor. Cocok untuk keluarga dengan fasilitas lengkap.">
     <meta name="twitter:image" content="https://warungkebunqu.com/images/warung-kebunqu-cover.jpg">
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
 
     <title>Warung Kebunqu</title>
     <link rel="shortcut icon" href="assets/image/Logo.png">
@@ -54,6 +57,35 @@
 </head>
 
 <style>
+    /* Custom Scrollbar */
+    
+     ::-webkit-scrollbar {
+        width: 12px;
+        /* Ukuran scrollbar */
+        height: 12px;
+        /* Ukuran scrollbar horizontal */
+    }
+    
+     ::-webkit-scrollbar-thumb {
+        background-color: #047857;
+        /* Warna dari scrollbar */
+        border-radius: 10px;
+        /* Menambahkan sudut melengkung pada scrollbar */
+        border: 3px solid transparent;
+        /* Memberikan ruang di sekitar scrollbar */
+    }
+    
+     ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        /* Warna latar belakang track scrollbar */
+        border-radius: 10px;
+    }
+    
+     ::-webkit-scrollbar-thumb:hover {
+        background-color: #045d45;
+        /* Warna scrollbar ketika di-hover */
+    }
+    
     #testimonialSlider {
         display: flex;
         transition: transform 1s ease-in-out;
@@ -66,9 +98,66 @@
         margin-right: 16px;
         /* Adjust space between cards */
     }
+    
+    .float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #25d366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+    }
+    
+    .my-float {
+        margin-top: 16px;
+    }
+    
+    .back-to-top {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 110px;
+        z-index: 100;
+        /* hidden */
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+    }
+    /* Hide the default date input icon */
+    
+    .custom-date-input::-webkit-calendar-picker-indicator {
+        display: none;
+    }
+    
+    .custom-date-input {
+        -moz-appearance: textfield;
+        /* Firefox */
+        appearance: textfield;
+        /* Chrome, Edge, Safari */
+    }
 </style>
 
 <body class="font-body">
+
+    <div class="fixed-buttons">
+        <button id="backToTopBtn" class="back-to-top hidden">
+            ↑
+        </button>
+
+        <a href="https://api.whatsapp.com/send?phone=6285283269416&text=Halo!%20✋%20Saya%20punya%20pertanyaan%20tentang%20menu%20Anda.%20Bisa%20bantu%20saya?%20😊" class="float" target="_blank">
+            <i class="fa fa-whatsapp my-float"></i>
+        </a>
+    </div>
 
     <!-- home section -->
     <section class="bg-white mb-20 md:mb-52 xl:mb-72">
@@ -106,9 +195,9 @@
 
                 </ul>
 
-                <button class="px-5 py-3 lg:block border-2 border-green-700 rounded-lg font-semibold text-green-700 text-lg hover:bg-green-700 hover:text-white transition ease-linear duration-500" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
+                <a class="px-5 py-3 lg:block border-2 border-green-700 rounded-lg font-semibold text-green-700 text-lg hover:bg-green-700 hover:text-white transition ease-linear duration-500" :class="{'hidden':!navbarOpen,'flex':navbarOpen}" href="https://api.whatsapp.com/send?phone=6285283269416&text=Halo!%20✋%20Saya%20punya%20pertanyaan%20tentang%20menu%20Anda.%20Bisa%20bantu%20saya?%20😊">
                     Request quote
-                </button>
+                </a>
 
             </nav>
 
@@ -121,8 +210,9 @@
                     <p class="font-normal text-xl text-gray-400 leading-relaxed mb-12"> Nikmati Kopi dan Villa mu dengan bahagia
                     </p>
 
-                    <button class="px-6 py-4 bg-green-700 text-white font-semibold text-lg rounded-xl hover:bg-green-900 transition ease-in-out duration-500">Contact
-                        us</button>
+                    <a class="px-6 py-4 bg-green-700 text-white font-semibold text-lg rounded-xl hover:bg-green-900 transition ease-in-out duration-500" href="https://api.whatsapp.com/send?phone=6285283269416&text=Halo!%20✋%20Saya%20punya%20pertanyaan%20tentang%20menu%20Anda.%20Bisa%20bantu%20saya?%20😊">
+                        Contact
+                        us</a>
                 </div>
 
                 <div class="hidden xl:block z-0 right-0">
@@ -211,7 +301,7 @@
     <!-- feature section //end -->
 
     <!-- gallery section -->
-    <div class="container mx-auto px-2">
+    <div class="container mx-auto px-2 pt-3" id="menu">
         <h1 class="text-3xl font-bold text-center mb-4">Menu Warung Kebunqu</h1>
 
         <!-- Search bar -->
@@ -286,6 +376,66 @@
     </section>
     <!-- testimoni section //end -->
 
+    <!-- book section -->
+    <section class="bg-white py-10 md:py-16 ">
+
+        <div class="container max-w-screen-xl mx-auto px-4 xl:relative ">
+
+            <div class="bg-green-800 flex flex-col lg:flex-row items-center justify-evenly py-14 rounded-3xl ">
+
+                <div class="text-center lg:text-left mb-10 lg:mb-0 ">
+                    <h1 class="font-semibold text-white text-4xl md:text-5xl lg:text-7xl leading-normal mb-4 ">
+                        Kontak Kami Untuk <br>Memesan kamar
+                    </h1>
+
+                    <p class="font-normal text-white text-md md:text-xl ">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>Ex nostrum eveniet ducimus error itaque dolores!
+                    </p>
+                </div>
+
+                <div class="hidden xl:block xl:absolute right-0 ">
+                    <img src="assets/image/book.png " alt="Image ">
+                </div>
+
+                <div class="hidden md:block bg-white xl:relative px-6 py-3 rounded-3xl ">
+                    <div class="py-3 ">
+                        <h3 class="font-semibold text-gray-900 text-3xl ">Booking Kamar</h3>
+                    </div>
+
+                    <div class="py-3 ">
+                        <input type="text " placeholder="Full Name " class="px-4 py-4 w-96 bg-gray-100 placeholder-gray-400 rounded-xl outline-none ">
+                    </div>
+
+                    <div class="py-3 ">
+                        <input type="text " placeholder="Email " class="px-4 py-4 w-96 bg-gray-100 placeholder-gray-400 rounded-xl outline-none ">
+                    </div>
+
+                    <div class="py-3 relative ">
+                        <input type="text " placeholder="Date " class="px-4 py-4 w-96 bg-gray-100 font-normal text-lg placeholder-gray-400 rounded-xl outline-none ">
+
+                        <div class="absolute inset-y-0 left-80 ml-6 flex items-center text-xl text-gray-600 ">
+                            <i data-feather="calendar "></i>
+                        </div>
+                    </div>
+
+                    <div class="py-3 relative ">
+                        <input type="text " placeholder="Virtual Meeting " class="px-4 py-4 w-96 bg-gray-100 placeholder-gray-400 rounded-xl outline-none ">
+
+                        <div class="absolute inset-y-0 left-80 ml-6 flex items-center text-xl text-gray-600 ">
+                            <i data-feather="chevron-down "></i>
+                        </div>
+                    </div>
+
+                    <div class="py-3 ">
+                        <button class="w-full py-4 font-semibold text-lg text-white bg-green-700 rounded-xl hover:bg-green-900 transition ease-in-out duration-500 ">Booking</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <!-- container.// -->
+    </section>
 
     <!-- book section //end -->
 
@@ -297,7 +447,7 @@
             <div class="flex flex-col lg:flex-row justify-between ">
                 <div class="text-center lg:text-left mb-10 lg:mb-0 ">
                     <div class="flex justify-center lg:justify-start mb-5 ">
-                        <img src="assets/image/Screenshot_2024-10-18_at_08.15.21-removebg-preview.png " alt="Logo img " class="w-32 md:w-48 lg:w-56 ">
+                        <img src="assets/image/Logo.png " alt="Logo img " class="w-32 md:w-48 lg:w-56 ">
                     </div>
 
                     <p class="font-light text-gray-400 text-xl mb-10 ">Temukan Villa nyaman dan Kopi terbaik di <br> Warung Kebunqu</p>
@@ -369,6 +519,28 @@
 
     </footer>
     <!-- footer //end -->
+
+    <script>
+        // Get the button
+        const backToTopBtn = document.getElementById("backToTopBtn");
+
+        // When the user scrolls down 100px from the top of the document, show the button
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                backToTopBtn.classList.remove("hidden");
+            } else {
+                backToTopBtn.classList.add("hidden");
+            }
+        };
+
+        // When the user clicks on the button, scroll to the top of the document
+        backToTopBtn.addEventListener("click", function() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
 
     <script>
         feather.replace()
