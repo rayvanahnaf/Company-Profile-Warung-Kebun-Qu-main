@@ -74,15 +74,15 @@
                 <ul class="lg:flex flex-col lg:flex-row lg:items-center lg:mx-auto lg:space-x-8 xl:space-x-16" :class="{'hidden':!navbarOpen,'flex':navbarOpen}">
 
                     <li class="font-semibold text-gray-900 text-lg hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
-                        <a href="#">Landing</a>
+                        <a href="#">Home</a>
                     </li>
 
                     <li class="font-semibold text-gray-900 text-lg hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
-                        <a href="#">Pages</a>
+                        <a href="#villa-list">Villa</a>
                     </li>
 
                     <li class="font-semibold text-gray-900 text-lg hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
-                        <a href="#">Contact</a>
+                        <a href="#menu">Menu</a>
                     </li>
 
                     <li class="font-semibold text-gray-900 text-lg hover:text-gray-400 transition ease-in-out duration-300 mb-5 lg:mb-0">
@@ -100,7 +100,8 @@
             <div class="flex items-center justify-center xl:justify-start">
 
                 <div class="mt-28 text-center xl:text-left">
-                    <h1 class="font-semibold text-4xl md:text-6xl lg:text-7xl text-gray-900 leading-normal mb-6"> Warung Kebunqu</h1>
+                    <h1 class="font-semibold text-4xl md:text-6xl lg:text-7xl text-gray-900 leading-normal mb-6"> Warung Kebunqu
+                    </h1>
 
                     <p class="font-normal text-xl text-gray-400 leading-relaxed mb-12"> Nikmati Kopi dan Villa mu dengan bahagia
                     </p>
@@ -122,7 +123,7 @@
     <!-- home section //nd -->
 
     <!-- feature section -->
-    <section class="bg-white py-10 md:py-16 xl:relative">
+    <section class="bg-white py-10 md:py-16 xl:relative" id="villa-list">
 
         <div class="container max-w-screen-xl mx-auto px-4">
 
@@ -195,109 +196,67 @@
     <!-- feature section //end -->
 
     <!-- gallery section -->
-    <div class="container mx-auto p-6">
-        <h1 class="text-3xl font-bold text-center mb-6">Daftar Produk</h1>
-        <div id="products" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Produk akan ditampilkan di sini -->
-        </div>
-    </div>
-
-    <!-- Google Reviews -->
-    <h1>Google Maps Reviews</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Page</th>
-                <th>Name</th>
-                <th>Link</th>
-                <th>Thumbnail</th>
-                <th>Rating</th>
-                <th>Date</th>
-                <th>Snippet</th>
-                <th>Local Guide</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for review in reviews %}
-            <tr>
-                <td>{{ review.page }}</td>
-                <td>{{ review.name }}</td>
-                <td><a href="{{ review.link }}">{{ review.link }}</a></td>
-                <td>
-                    {% if review.thumbnail %}
-                        <img src="{{ review.thumbnail }}" alt="Thumbnail" style="width:50px;">
-                    {% else %}
-                        No Image
-                    {% endif %}
-                </td>
-                <td>{{ review.rating }}</td>
-                <td>{{ review.date }}</td>
-                <td>{{ review.snippet }}</td>
-                <td>{{ 'Yes' if review.local_guide else 'No' }}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-
-    <!-- End Google Reviews -->
+    <h1>Daftar Produk</h1>
+  <div id="products"></div>
 
     <!-- gallery section //end -->
 
     <!-- testimoni section -->
-    <section class="bg-white py-10 md:py-16">
+    <section class="bg-white py-10 md:py-16 ">
 
-        <div class="container max-w-screen-xl mx-auto px-4 xl:relative">
+        <div class="container max-w-screen-xl mx-auto px-4 xl:relative ">
 
-            <p class="font-normal text-gray-400 text-lg md:text-xl text-center uppercase mb-6">Testimonial</p>
+            <p class="font-normal text-gray-400 text-lg md:text-xl text-center uppercase mb-6 ">Testimonial</p>
 
-            <h1 class="font-semibold text-gray-900 text-2xl md:text-4xl text-center leading-normal mb-14">Apa kata mereka tentang
+            <h1 class="font-semibold text-gray-900 text-2xl md:text-4xl text-center leading-normal mb-14 ">Apa kata mereka tentang
                 <br>Warung Kebunqu
             </h1>
 
-            <div class="hidden xl:block xl:absolute top-0">
-                <img src="assets/image/testimoni-1.png" alt="Image">
+            <div class="hidden xl:block xl:absolute top-0 ">
+                <img src="assets/image/testimoni-1.png " alt="Image ">
             </div>
 
-            <div class="hidden xl:block xl:absolute top-32">
-                <img src="assets/image/testimoni-2.png" alt="Image">
+            <div class="hidden xl:block xl:absolute top-32 ">
+                <img src="assets/image/testimoni-2.png " alt="Image ">
             </div>
 
-            <div class="flex flex-col md:flex-row md:items-center justify-center md:space-x-8 lg:space-x-12 mb-10 md:mb-20">
+            <div class="flex flex-col md:flex-row md:items-center justify-center md:space-x-8 lg:space-x-12 mb-10 md:mb-20 ">
 
-                <div class="bg-gray-100 rounded-lg mb-10 md:mb-0">
-                    <img src="assets/image/testimoni-3.png" alt="Image" class="mx-8 my-8">
+                <div class="bg-gray-100 rounded-lg mb-10 md:mb-0 ">
+                    <img src="assets/image/testimoni-3.png " alt="Image " class="mx-8 my-8 ">
 
-                    <div class="flex items-center gap-5 mx-8">
-                        <i data-feather="star" class="text-yellow-500"></i>
-                        <i data-feather="star" class="text-yellow-500"></i>
-                        <i data-feather="star" class="text-yellow-500"></i>
-                        <i data-feather="star" class="text-yellow-500"></i>
-                        <i data-feather="star" class="text-yellow-500"></i>
+                    <div class="flex items-center gap-5 mx-8 ">
+                        <i data-feather="star " class="text-yellow-500 "></i>
+                        <i data-feather="star " class="text-yellow-500 "></i>
+                        <i data-feather="star " class="text-yellow-500 "></i>
+                        <i data-feather="star " class="text-yellow-500 "></i>
+                        <i data-feather="star " class="text-yellow-500 "></i>
                     </div>
 
-                    <p class="font-normal text-sm lg:text-md text-gray-400 mx-8 my-8">
+                    <p class="font-normal text-sm lg:text-md text-gray-400 mx-8 my-8 ">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse repudiandae ullam natus tempora quam debitis odio dicta asperiores quidem ea quae perferendis quisquam consequuntur, fugiat commodi illo quasi sint ut? Corrupti iure, quidem ratione, exercitationem
                         aut deleniti eveniet sint, dolorem iste earum fuga voluptatem consequuntur ea quam perferendis omnis error!
                     </p>
 
-                    <h3 class="font-semibold text-gray-900 text-xl md:text-2xl lg:text-3xl mx-8 mb-8">Brooklyn Simmons
+                    <h3 class="font-semibold text-gray-900 text-xl md:text-2xl lg:text-3xl mx-8 mb-8 ">Brooklyn Simmons
                     </h3>
                 </div>
 
-                <div class="bg-gray-100 rounded-lg">
-                    <img src="assets/image/testimoni-4.png  " alt="Image" class="mx-8 my-8">
+                <div class="bg-gray-100 rounded-lg ">
+                    <img src="assets/image/testimoni-4.png " alt="Image " class="mx-8 my-8 ">
 
-                    <div class="flex items-center gap-5 mx-8">
-                        <i data-feather="star" class="text-yellow-500"></i>
-                        <i data-feather="star" class="text-yellow-500"></i>
-                        <i data-feather="star" class="text-yellow-500"></i>
-                        <i data-feather="star" class="text-yellow-500"></i>
-                        <i data-feather="star" class="text-yellow-500"></i>
+                    <div class="flex items-center gap-5 mx-8 ">
+                        <i data-feather="star " class="text-yellow-500 "></i>
+                        <i data-feather="star " class="text-yellow-500 "></i>
+                        <i data-feather="star " class="text-yellow-500 "></i>
+                        <i data-feather="star " class="text-yellow-500 "></i>
+                        <i data-feather="star " class="text-yellow-500 "></i>
                     </div>
 
-                    <p class="font-normal text-sm lg:text-md text-gray-400 mx-8 my-8"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo corporis hic possimus adipisci voluptatum, minima recusandae fugiat delectus culpa natus, voluptas temporibus officiis quae doloremque.
+                    <p class="font-normal text-sm lg:text-md text-gray-400 mx-8 my-8 "> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo corporis hic possimus adipisci voluptatum, minima recusandae fugiat delectus culpa natus, voluptas temporibus officiis quae doloremque.
 
-                        <h3 class="font-semibold text-gray-900 text-xl md:text-2xl lg:text-3xl mx-8 mb-8">Ralph Edwards</h3>
+                        <h3 class="font-semibold text-gray-900 text-xl md:text-2xl lg:text-3xl mx-8 mb-8 ">Ralph Edwards
+                        </h3>
                 </div>
 
             </div>
@@ -309,57 +268,57 @@
     <!-- testimoni section //end -->
 
     <!-- book section -->
-    <section class="bg-white py-10 md:py-16">
+    <section class="bg-white py-10 md:py-16 ">
 
-        <div class="container max-w-screen-xl mx-auto px-4 xl:relative">
+        <div class="container max-w-screen-xl mx-auto px-4 xl:relative ">
 
-            <div class="bg-green-800 flex flex-col lg:flex-row items-center justify-evenly py-14 rounded-3xl">
+            <div class="bg-green-800 flex flex-col lg:flex-row items-center justify-evenly py-14 rounded-3xl ">
 
-                <div class="text-center lg:text-left mb-10 lg:mb-0">
-                    <h1 class="font-semibold text-white text-4xl md:text-5xl lg:text-7xl leading-normal mb-4">
+                <div class="text-center lg:text-left mb-10 lg:mb-0 ">
+                    <h1 class="font-semibold text-white text-4xl md:text-5xl lg:text-7xl leading-normal mb-4 ">
                         Kontak Kami Untuk <br>Memesan kamar
                     </h1>
 
-                    <p class="font-normal text-white text-md md:text-xl">
+                    <p class="font-normal text-white text-md md:text-xl ">
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>Ex nostrum eveniet ducimus error itaque dolores!
                     </p>
                 </div>
 
-                <div class="hidden xl:block xl:absolute right-0">
-                    <img src="assets/image/book.png" alt="Image">
+                <div class="hidden xl:block xl:absolute right-0 ">
+                    <img src="assets/image/book.png " alt="Image ">
                 </div>
 
-                <div class="hidden md:block bg-white xl:relative px-6 py-3 rounded-3xl">
-                    <div class="py-3">
-                        <h3 class="font-semibold text-gray-900 text-3xl">Booking Kamar</h3>
+                <div class="hidden md:block bg-white xl:relative px-6 py-3 rounded-3xl ">
+                    <div class="py-3 ">
+                        <h3 class="font-semibold text-gray-900 text-3xl ">Booking Kamar</h3>
                     </div>
 
-                    <div class="py-3">
-                        <input type="text" placeholder="Full Name" class="px-4 py-4 w-96 bg-gray-100 placeholder-gray-400 rounded-xl outline-none">
+                    <div class="py-3 ">
+                        <input type="text " placeholder="Full Name " class="px-4 py-4 w-96 bg-gray-100 placeholder-gray-400 rounded-xl outline-none ">
                     </div>
 
-                    <div class="py-3">
-                        <input type="text" placeholder="Email" class="px-4 py-4 w-96 bg-gray-100 placeholder-gray-400 rounded-xl outline-none">
+                    <div class="py-3 ">
+                        <input type="text " placeholder="Email " class="px-4 py-4 w-96 bg-gray-100 placeholder-gray-400 rounded-xl outline-none ">
                     </div>
 
-                    <div class="py-3 relative">
-                        <input type="text" placeholder="Date" class="px-4 py-4 w-96 bg-gray-100 font-normal text-lg placeholder-gray-400 rounded-xl outline-none">
+                    <div class="py-3 relative ">
+                        <input type="text " placeholder="Date " class="px-4 py-4 w-96 bg-gray-100 font-normal text-lg placeholder-gray-400 rounded-xl outline-none ">
 
-                        <div class="absolute inset-y-0 left-80 ml-6 flex items-center text-xl text-gray-600">
-                            <i data-feather="calendar"></i>
+                        <div class="absolute inset-y-0 left-80 ml-6 flex items-center text-xl text-gray-600 ">
+                            <i data-feather="calendar "></i>
                         </div>
                     </div>
 
-                    <div class="py-3 relative">
-                        <input type="text" placeholder="Virtual Meeting" class="px-4 py-4 w-96 bg-gray-100 placeholder-gray-400 rounded-xl outline-none">
+                    <div class="py-3 relative ">
+                        <input type="text " placeholder="Virtual Meeting " class="px-4 py-4 w-96 bg-gray-100 placeholder-gray-400 rounded-xl outline-none ">
 
-                        <div class="absolute inset-y-0 left-80 ml-6 flex items-center text-xl text-gray-600">
-                            <i data-feather="chevron-down"></i>
+                        <div class="absolute inset-y-0 left-80 ml-6 flex items-center text-xl text-gray-600 ">
+                            <i data-feather="chevron-down "></i>
                         </div>
                     </div>
 
-                    <div class="py-3">
-                        <button class="w-full py-4 font-semibold text-lg text-white bg-green-700 rounded-xl hover:bg-green-900 transition ease-in-out duration-500">Booking</button>
+                    <div class="py-3 ">
+                        <button class="w-full py-4 font-semibold text-lg text-white bg-green-700 rounded-xl hover:bg-green-900 transition ease-in-out duration-500 ">Booking</button>
                     </div>
                 </div>
 
@@ -372,74 +331,76 @@
     <!-- book section //end -->
 
     <!-- footer -->
-    <footer class="bg-white py-10 md:py-16">
+    <footer class="bg-white py-10 md:py-16 ">
 
-        <div class="container max-w-screen-xl mx-auto px-4">
+        <div class="container max-w-screen-xl mx-auto px-4 ">
 
-            <div class="flex flex-col lg:flex-row justify-between">
-                <div class="text-center lg:text-left mb-10 lg:mb-0">
-                    <div class="flex justify-center lg:justify-start mb-5">
-                        <img src="assets/image/Screenshot_2024-10-18_at_08.15.21-removebg-preview.png" alt="Logo img" class="w-32 md:w-48 lg:w-56">
+            <div class="flex flex-col lg:flex-row justify-between ">
+                <div class="text-center lg:text-left mb-10 lg:mb-0 ">
+                    <div class="flex justify-center lg:justify-start mb-5 ">
+                        <img src="assets/image/Screenshot_2024-10-18_at_08.15.21-removebg-preview.png " alt="Logo img " class="w-32 md:w-48 lg:w-56 ">
                     </div>
 
-                    <p class="font-light text-gray-400 text-xl mb-10">Temukan Villa nyaman dan Kopi terbaik di <br> Warung Kebunqu</p>
+                    <p class="font-light text-gray-400 text-xl mb-10 ">Temukan Villa nyaman dan Kopi terbaik di <br> Warung Kebunqu</p>
 
-                    <div class="flex items-center justify-center lg:justify-start space-x-5">
-                        <a href="#" class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-green-800 hover:text-white transition ease-in-out duration-500">
-                            <i data-feather="facebook"></i>
+                    <div class="flex items-center justify-center lg:justify-start space-x-5 ">
+                        <a href="# " class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-green-800 hover:text-white transition ease-in-out duration-500 ">
+                            <i data-feather="facebook "></i>
                         </a>
 
-                        <a href="#" class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-green-800 hover:text-white transition ease-in-out duration-500">
-                            <i data-feather="twitter"></i>
+                        <a href="# " class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-green-800 hover:text-white transition ease-in-out duration-500 ">
+                            <i data-feather="twitter "></i>
                         </a>
 
-                        <a href="#" class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-green-800 hover:text-white transition ease-in-out duration-500">
-                            <i data-feather="linkedin"></i>
+                        <a href="# " class="px-3 py-3 bg-gray-200 text-gray-700 rounded-full hover:bg-green-800 hover:text-white transition ease-in-out duration-500 ">
+                            <i data-feather="linkedin "></i>
                         </a>
                     </div>
                 </div>
 
-                <div class="text-center lg:text-left mb-10 lg:mb-0">
-                    <h4 class="font-semibold text-gray-900 text-2xl mb-6">Sitemap</h4>
+                <div class="text-center lg:text-left mb-10 lg:mb-0 ">
+                    <h4 class="font-semibold text-gray-900 text-2xl mb-6 ">Sitemap</h4>
 
-                    <a href="#" class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300">Home</a>
+                    <a href="# " class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300 ">Home</a>
 
-                    <a href="#" class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300">Features</a>
+                    <a href="# " class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300 ">Features</a>
 
-                    <a href="#" class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300">Gallery</a>
+                    <a href="# " class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300 ">Gallery</a>
 
-                    <a href="#" class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300">Testimoni</a>
+                    <a href="# " class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300 ">Testimoni</a>
 
-                    <a href="#" class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300">Book
+                    <a href="# " class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300 ">Book
                         a meeting</a>
                 </div>
 
-                <div class="text-center lg:text-left mb-10 lg:mb-0">
-                    <h4 class="font-semibold text-gray-900 text-2xl mb-6">Landing</h4>
+                <div class="text-center lg:text-left mb-10 lg:mb-0 ">
+                    <h4 class="font-semibold text-gray-900 text-2xl mb-6 ">
+                        <a href="# " class=" ">Home</a>
+                    </h4>
 
-                    <a href="#" class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300">Mobile
+                    <a href="# " class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300 ">Mobile
                         App</a>
 
-                    <a href="#" class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300">Property</a>
+                    <a href="# " class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300 ">Property</a>
 
-                    <a href="#" class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300">Personal
+                    <a href="# " class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300 ">Personal
                         Website</a>
 
-                    <a href="#" class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300">Web
+                    <a href="# " class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300 ">Web
                         Developer</a>
 
-                    <a href="#" class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300">Online
+                    <a href="# " class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300 ">Online
                         Course</a>
 
-                    <a href="#" class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300">Donation</a>
+                    <a href="# " class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300 ">Donation</a>
                 </div>
 
-                <div class="text-center lg:text-left">
-                    <h4 class="font-semibold text-gray-900 text-2xl mb-6">Utility</h4>
+                <div class="text-center lg:text-left ">
+                    <h4 class="font-semibold text-gray-900 text-2xl mb-6 ">Utility</h4>
 
-                    <a href="#" class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300">FAQ</a>
+                    <a href="# " class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300 ">FAQ</a>
 
-                    <a href="#" class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300">Terms
+                    <a href="# " class="block font-light text-gray-400 text-xl mb-6 hover:text-gray-800 transition ease-in-out duration-300 ">Terms
                         & Conditions</a>
                 </div>
             </div>
@@ -454,7 +415,7 @@
         feather.replace()
     </script>
 
-    <script src="assets/js/api.js"></script>
+    <script src="assets/js/api.js "></script>
 
 </body>
 
