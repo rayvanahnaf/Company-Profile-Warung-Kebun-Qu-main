@@ -52,6 +52,9 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Swiper JS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
@@ -121,7 +124,7 @@
         height: 60px;
         bottom: 40px;
         right: 40px;
-        background-color: #25d366;
+        background-color: #047857;
         color: #FFF;
         border-radius: 50px;
         text-align: center;
@@ -163,78 +166,27 @@
         /* Chrome, Edge, Safari */
     }
 
-    .swiper {
-        width: 80%;
-        height: auto;
-        background-color: #ffffff;
-        border-radius: 15px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-    }
-
     .swiper-slide {
         display: flex;
-        flex-direction: column;
-        align-items: center;
         justify-content: center;
-        text-align: center;
-        background-color: #fdfdfd;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        padding: 20px;
-        transition: transform 0.3s ease;
-    }
-
-    .swiper-slide:hover {
-        transform: scale(1.05);
-    }
-
-    .swiper-slide img {
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        object-fit: cover;
-        margin-bottom: 15px;
-        border: 3px solid #007bff;
-    }
-
-    .swiper-slide h3 {
-        font-size: 1.2rem;
-        color: #333;
-        margin-bottom: 5px;
-    }
-
-    .swiper-slide p {
-        font-size: 0.95rem;
-        color: #666;
-        margin-bottom: 10px;
-        line-height: 1.5;
-    }
-
-    .swiper-slide a {
-        color: #007bff;
-        font-size: 0.9rem;
-        text-decoration: none;
-        margin-top: 10px;
-        transition: color 0.2s;
-    }
-
-    .swiper-slide a:hover {
-        color: #0056b3;
+        align-items: center;
     }
 
     .swiper-button-next,
     .swiper-button-prev {
-        color: #007bff;
+        font-size: 1.5rem;
+        color: #16a34a;
+        /* Hijau */
     }
 
     .swiper-pagination-bullet {
-        background: #007bff;
-        opacity: 0.7;
+        background: #16a34a;
+        /* Hijau */
     }
 
     .swiper-pagination-bullet-active {
-        background: #0056b3;
+        background: #14532d;
+        /* Hijau lebih gelap */
     }
 </style>
 
@@ -247,7 +199,7 @@
 
         <a href="https://api.whatsapp.com/send?phone=6285283269416&text=Halo!%20✋%20Saya%20punya%20pertanyaan%20tentang%20menu%20Anda.%20Bisa%20bantu%20saya?%20😊"
             class="float" target="_blank">
-            <i class="fa fa-whatsapp my-float"></i>
+            <i class="fa-brands fa-whatsapp my-float"></i>
         </a>
     </div>
 
@@ -313,11 +265,20 @@
                         bahagia
                     </p>
 
-                    <a class="px-6 py-4 bg-green-700 text-white font-semibold text-lg rounded-xl hover:bg-green-900 transition ease-in-out duration-500"
-                        href="https://api.whatsapp.com/send?phone=6285283269416&text=Halo!%20✋%20Saya%20punya%20pertanyaan%20tentang%20menu%20Anda.%20Bisa%20bantu%20saya?%20😊">
-                        Contact
-                        us</a>
+                    <!-- Wrapper untuk tombol -->
+                    <div class="flex justify-center xl:justify-start items-center space-x-4">
+                        <!-- Button Contact Us -->
+                        <a class="px-6 py-4 bg-green-700 text-white font-semibold text-lg rounded-xl hover:bg-green-900 transition ease-in-out duration-500"
+                            href="https://api.whatsapp.com/send?phone=6285283269416&text=Halo!%20✋%20Saya%20punya%20pertanyaan%20tentang%20menu%20Anda.%20Bisa%20bantu%20saya?%20😊">
+                            Contact us</a>
+                        <!-- Button Maps -->
+                        <a class="flex items-center justify-center w-16 h-16 bg-green-700 text-white rounded-full hover:bg-green-900 transition ease-in-out duration-500"
+                            href="https://maps.app.goo.gl/vPssfUJ2y4GHh4Lz5" target="_blank" aria-label="Open Maps">
+                            <i class="fa-solid fa-map text-2xl"></i>
+                        </a>
+                    </div>
                 </div>
+
 
                 <div class="hidden xl:block z-0 right-0">
                     <img src="assets/image/fried-rice.jpg" alt="Home img"
@@ -432,7 +393,7 @@
 
         <!-- Load More Button -->
         <div class="text-center mt-4">
-            <button id="loadMoreBtn" class="bg-blue-500 text-white py-2 px-4 rounded">Load More</button>
+            <button id="loadMoreBtn" class="bg-green-800 text-white py-2 px-4 rounded">Load More</button>
         </div>
     </div>
     <!-- gallery section //end -->
@@ -449,16 +410,17 @@
                 <br>Warung Kebunqu
             </h1>
 
-            <div class="swiper mySwiper">
+            <div class="swiper mySwiper max-w-5xl mx-auto">
                 <div class="swiper-wrapper" id="swiper-wrapper">
-                    <!-- Slide items will be dynamically loaded by testimonials.js -->
+                    <!-- Slide akan diisi melalui JavaScript -->
                 </div>
-                <!-- Navigation buttons -->
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <!-- Pagination dots -->
+                <!-- Tombol Navigasi -->
+                <div class="swiper-button-next text-green-700"></div>
+                <div class="swiper-button-prev text-green-700"></div>
+                <!-- Pagination -->
                 <div class="swiper-pagination"></div>
             </div>
+
 
 
         </div>
