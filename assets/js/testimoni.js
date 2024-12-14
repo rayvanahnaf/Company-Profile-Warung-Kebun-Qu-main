@@ -30,18 +30,16 @@ fetch("testimonials.json")
           </svg>
           View Profile
         </a>
-
       `;
       swiperWrapper.appendChild(slide);
     });
 
-    // Inisialisasi Swiper.js dengan Grid
+    // Inisialisasi Swiper.js dengan Grid dan Breakpoints
     new Swiper(".mySwiper", {
       grid: {
         rows: 1, // Jumlah baris
         fill: "row", // Mengisi per baris
       },
-      slidesPerView: 2, // Jumlah kolom
       spaceBetween: 20, // Jarak antar slide
       pagination: {
         el: ".swiper-pagination",
@@ -50,6 +48,20 @@ fetch("testimonials.json")
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
+      },
+      breakpoints: {
+        // Mobile: 1 slide per view
+        320: {
+          slidesPerView: 1, 
+        },
+        // Tablet: 3 slides per view
+        768: {
+          slidesPerView: 2,
+        },
+        // Laptop: 3 slides per view
+        1024: {
+          slidesPerView: 3,
+        },
       },
     });
   })
