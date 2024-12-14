@@ -49,6 +49,10 @@ fetch("testimonials.json")
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+      autoplay: {
+        delay: 5000, // 5 detik
+        disableOnInteraction: false,
+      },
       breakpoints: {
         // Mobile: 1 slide per view
         320: {
